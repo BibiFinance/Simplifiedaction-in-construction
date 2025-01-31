@@ -1,36 +1,53 @@
-body{
-    background-color: #000000;
+/* Fond noir */
+body {
+  background-color: #000000;
+  color: #ffffff; /* Texte en blanc pour plus de visibilité */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Remplir toute la hauteur de la fenêtre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
+/* Style du bouton */
 .shadow__btn {
-    padding: 20px 20px;
-    border: none;
-    font-size: 20px;
-    color: #000000;
-    border-radius: 7px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.5s;
-    transition-property: box-shadow;
-    
-  }
-  
-  .shadow__btn {
-    background: rgb(255, 255, 255);
-    box-shadow: 0 0 25px rgb(255, 255, 255);
-    
-  }
-  
-  .shadow__btn:hover {
-    box-shadow: 0 0 5px rgb(255, 255, 255),
-                0 0 25px rgb(255, 255, 255),
-                0 0 50px rgb(255, 255, 255),
-                0 0 100px rgb(255, 255, 255);
-  }
-  div{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
+  padding: 20px 40px;
+  border: none;
+  font-size: 20px;
+  color: #000000;
+  background: rgb(255, 255, 255);
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  cursor: pointer; /* Ajoute un curseur pointer pour montrer que c'est cliquable */
+}
+
+/* Effet d'ombre pour le bouton */
+.shadow__btn:hover {
+  box-shadow: 0 0 5px rgb(255, 255, 255),
+              0 0 25px rgb(255, 255, 255),
+              0 0 50px rgb(255, 255, 255),
+              0 0 100px rgb(255, 255, 255);
+}
+
+/* Conteneur centré */
+div {
+  text-align: center; /* Centrer le texte */
+}
+
+/* Titre */
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* Message sous le bouton */
+p {
+  font-size: 20px;
+  margin-top: 20px;
+}
