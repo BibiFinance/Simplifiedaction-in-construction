@@ -1,53 +1,56 @@
-/* Fond noir */
 body {
   background-color: #000000;
-  color: #ffffff; /* Texte en blanc pour plus de visibilité */
   font-family: Arial, sans-serif;
+  color: #fff;
   margin: 0;
   padding: 0;
-  height: 100vh; /* Remplir toute la hauteur de la fenêtre */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Style du bouton */
-.shadow__btn {
-  padding: 20px 40px;
-  border: none;
-  font-size: 20px;
-  color: #000000;
-  background: rgb(255, 255, 255);
-  border-radius: 7px;
-  letter-spacing: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: 0.5s;
-  transition-property: box-shadow;
-  cursor: pointer; /* Ajoute un curseur pointer pour montrer que c'est cliquable */
+.container {
+  text-align: center;
+  padding: 50px;
 }
 
-/* Effet d'ombre pour le bouton */
-.shadow__btn:hover {
-  box-shadow: 0 0 5px rgb(255, 255, 255),
-              0 0 25px rgb(255, 255, 255),
-              0 0 50px rgb(255, 255, 255),
-              0 0 100px rgb(255, 255, 255);
-}
-
-/* Conteneur centré */
-div {
-  text-align: center; /* Centrer le texte */
-}
-
-/* Titre */
 h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  color: #00bcd4;
 }
 
-/* Message sous le bouton */
-p {
-  font-size: 20px;
+h2 {
+  font-size: 28px;
+  color: #ffcc00;
   margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.shadow__btn {
+  padding: 20px 30px;
+  font-size: 20px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 7px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px #ffffff;
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 10px #00bcd4, 0 0 25px #00bcd4;
 }
