@@ -1,0 +1,56 @@
+/* Style global pour supprimer les marges par défaut et définir le fond */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000000; /* Fond noir */
+}
+
+/* Conteneur de la zone de recherche */
+.search-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Champ de recherche avec bordure verte */
+.search-box {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 4px solid #528f76;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Effet focus pour garder la bordure verte quand on clique */
+.search-box:focus {
+    outline: none;
+    border-color: #528f76;
+}
+
+/* Tableau des résultats */
+.search-results {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+/* Cellules du tableau */
+.search-results th,
+.search-results td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* En-têtes du tableau */
+.search-results th {
+    background-color: #f9f9f9;
+}
+
+/* Effet de survol sur les lignes */
+.search-results tr:hover {
+    background-color: #f1f1f1;
+}

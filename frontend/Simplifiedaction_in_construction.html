@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche d'Actions - SimplifiedAction</title>
+
+    <!-- Feuille de style CSS externe -->
+    <link rel="stylesheet" href="Simplifiedaction_in_construction.css">
+
+    <!-- ❌ Ceci est une erreur : on ne met pas un fichier JS dans un lien CSS -->
+    <!-- <link rel="stylesheet" href="Simplifiedaction_in_construction.js"> -->
+
+    <!-- Script JavaScript externe (chargé après le HTML grâce à "defer") -->
+    <script src="Simplifiedaction_in_construction.js" defer></script>
+</head>
+<body>
+
+    <!-- Conteneur principal de la recherche -->
+    <div class="search-container">
+        <!-- Champ de recherche -->
+        <input type="text" id="search-box" class="search-box" placeholder="Action / Ticker (ex: AAPL, TESLA...)">
+
+        <!-- Tableau des résultats -->
+        <table class="search-results" id="results-table">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Entreprise</th>
+                    <th>Rendement attendu</th>
+                    <th>Risque estimé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes de résultats seront injectées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
