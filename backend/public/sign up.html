@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Simplified Action</title>
+  <link rel="stylesheet" href="Simplifiedaction_in_construction.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <button class="back-button" onclick="window.location.href='index.html'">←</button>
+    
+    <div class="logo">
+      <h1>📊 Simplified Action</h1>
+      <p>Créez votre compte</p>
+    </div>
+
+    <form class="signup-form" id="signupForm">
+      <h2>Inscription</h2>
+      
+      <div class="error-message" id="errorMessage"></div>
+      <div class="success-message" id="successMessage"></div>
+      
+      <div class="loading" id="loadingMessage" style="display:none;">
+        <div class="loading-spinner"></div>
+        <p>Création du compte...</p>
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" name="firstName" class="form-input" required placeholder="Votre prénom">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" name="lastName" class="form-input" required placeholder="Votre nom">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required placeholder="votre.email@exemple.com">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" class="form-input" required minlength="6" placeholder="Choisissez un mot de passe sécurisé">
+        <div class="password-requirements">Le mot de passe doit contenir au minimum 6 caractères</div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required placeholder="Confirmez votre mot de passe">
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Créer mon compte</button>
+    </form>
+
+    <div class="login-link">
+      <p>Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+    </div>
+  </div>
+
+  <!-- Supabase et ton script -->
+  <!-- Ordre correct des scripts -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="signup.js"></script>
+</body>
+</html>

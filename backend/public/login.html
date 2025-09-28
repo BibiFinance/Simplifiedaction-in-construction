@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - Simplified Action</title>
+  <link rel="stylesheet" href="Simplifiedaction_in_construction.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Connexion</h2>
+
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+      <button type="submit" id="submit-btn">Se connecter</button>
+    </form>
+
+    <p>
+      Pas encore de compte ? 
+      <a href="sign up.html">S'inscrire</a>
+    </p>
+
+    <p id="error-message" style="color: red; display: none;"></p>
+  </div>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

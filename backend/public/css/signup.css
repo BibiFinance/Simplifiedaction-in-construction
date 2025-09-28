@@ -1,0 +1,323 @@
+/* Page d'inscription - signup.css */
+
+body {
+    background: linear-gradient(135deg, #f0f9f7 0%, #e8f5f1 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.signup-container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.back-button:hover {
+    color: #109c84;
+    background: rgba(16, 156, 132, 0.1);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: #109c84;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo p {
+    color: #666;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.signup-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e2e2;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #109c84;
+    box-shadow: 0 0 0 3px rgba(16, 156, 132, 0.1);
+}
+
+.form-input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #e63946;
+}
+
+.password-requirements {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #109c84;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: #0e8b73;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 156, 132, 0.3);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #109c84;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #0e8b73;
+    text-decoration: underline;
+}
+
+/* Messages */
+.error-message {
+    background: #ffe0e0;
+    color: #b00020;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+    border-left: 4px solid #e63946;
+}
+
+.success-message {
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+    border-left: 4px solid #4caf50;
+}
+
+/* Loading */
+.loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(16, 156, 132, 0.05);
+    border-radius: 10px;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #e8f5f1;
+    border-top: 3px solid #109c84;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+.loading p {
+    color: #109c84;
+    font-weight: 500;
+    margin: 0;
+    font-size: 14px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+.form-group {
+    animation: slideInUp 0.5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-container {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .signup-container {
+        padding: 30px 20px;
+        margin: 0;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .signup-form h2 {
+        font-size: 20px;
+    }
+
+    .back-button {
+        top: 15px;
+        left: 15px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .signup-container {
+        padding: 25px 15px;
+    }
+
+    .form-input {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* États de validation */
+.form-input.valid {
+    border-color: #4caf50;
+}
+
+.form-input.invalid {
+    border-color: #e63946;
+}
+
+/* Focus states améliorés */
+.form-input:focus-visible {
+    outline: 2px solid #109c84;
+    outline-offset: 2px;
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .signup-container,
+    .form-group,
+    .loading-spinner {
+        animation: none;
+    }
+    
+    .submit-btn:hover:not(:disabled) {
+        transform: none;
+    }
+}

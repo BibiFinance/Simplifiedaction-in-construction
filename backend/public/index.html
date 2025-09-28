@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplifiedaction</title>
+    <link rel="stylesheet" href="Simplifiedaction_in_construction.css">
+</head>
+
+<body>
+    <div class="search-header">
+        <div class="site-branding">
+            <h1 class="site-title">📊 Simplified Action</h1>
+            <p class="site-subtitle">L'essentiel du marché, sans complexité</p>
+        </div>
+        
+        <div id="auth-buttons">
+            </div>
+    </div>
+    
+    <div class="container">
+        <input 
+            type="text" 
+            placeholder="Rechercher un symbole (ex: AAPL)..." 
+            id="searchInput" 
+            class="input"
+        >
+        
+        <div id="results" class="results"></div>
+    </div>
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="Simplifiedaction_in_construction.js"></script>
+    
+    <script>
+        // Vérifier l'authentification au chargement
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await checkAuth();
+            const authButtonsDiv = document.getElementById('auth-buttons');
+            
+            // Si un utilisateur est connecté, on affiche le bouton de déconnexion
+            if (user) {
+                authButtonsDiv.innerHTML = `
+                    <button class="buttonlogin" onclick="logout()">
+                        Déconnexion
+                    </button>
+                `;
+                console.log('Utilisateur connecté:', user.email);
+            } else {
+                // Sinon, on affiche le bouton de connexion
+                authButtonsDiv.innerHTML = `
+                    <button class="buttonlogin" onclick="window.location.href='login.html'">
+                        Se connecter
+                    </button>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
