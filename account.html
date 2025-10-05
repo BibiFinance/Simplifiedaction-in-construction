@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte - Simplified Action</title>
+    <link rel="stylesheet" href="Simplifiedaction_in_construction.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="search-header">
+        <div class="site-branding">
+            <h1 class="site-title">📊 Simplified Action</h1>
+            <p class="site-subtitle">Mon Compte</p>
+        </div>
+        <div class="header-actions">
+            <button class="buttonlogin" onclick="window.location.href='index.html'">
+                🏠 Accueil
+            </button>
+            <button class="buttonlogin" onclick="logout()">
+                Déconnexion
+            </button>
+        </div>
+    </div>
+
+    <!-- Container principal -->
+    <div class="account-container">
+        <!-- Messages -->
+        <div id="message" class="message" style="display: none;"></div>
+        
+        <!-- Loading -->
+        <div id="loading" class="loading-section">
+            <div class="loading-spinner"></div>
+            <p>Chargement de votre compte...</p>
+        </div>
+
+        <!-- Contenu principal -->
+        <div id="account-content" style="display: none;">
+            
+            <!-- Section Profil -->
+            <section class="account-section">
+                <div class="section-header">
+                    <h2>👤 Informations personnelles</h2>
+                    <button id="edit-profile-btn" class="btn-secondary">Modifier</button>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="info-group">
+                        <label>Prénom</label>
+                        <span id="first-name-display">-</span>
+                        <input type="text" id="first-name-input" style="display: none;">
+                    </div>
+                    <div class="info-group">
+                        <label>Nom</label>
+                        <span id="last-name-display">-</span>
+                        <input type="text" id="last-name-input" style="display: none;">
+                    </div>
+                    <div class="info-group">
+                        <label>Email</label>
+                        <span id="email-display">-</span>
+                    </div>
+                </div>
+
+                <div id="profile-actions" style="display: none;">
+                    <button id="save-profile-btn" class="btn-primary">Sauvegarder</button>
+                    <button id="cancel-profile-btn" class="btn-secondary">Annuler</button>
+                </div>
+            </section>
+
+            <!-- Section Statut -->
+            <section class="account-section">
+                <div class="section-header">
+                    <h2>💎 Statut d'abonnement</h2>
+                </div>
+                
+                <div class="status-card" id="status-card">
+                    <div class="status-badge" id="status-badge">
+                        <span id="status-text">Gratuit</span>
+                    </div>
+                    <div class="status-details">
+                        <p id="status-description">Accès aux fonctionnalités de base</p>
+                        <p id="status-limits">Limite : 5 favoris</p>
+                    </div>
+                    <button id="upgrade-btn" class="btn-premium" style="display: none;">
+                        Passer à Premium
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section Statistiques -->
+            <section class="account-section">
+                <div class="section-header">
+                    <h2>📊 Statistiques</h2>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="favorites-count">0</div>
+                        <div class="stat-label">Favoris</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="member-since">-</div>
+                        <div class="stat-label">Membre depuis</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Favoris -->
+            <section class="account-section">
+                <div class="section-header">
+                    <h2>⭐ Mes Favoris</h2>
+                    <button id="refresh-favorites-btn" class="btn-secondary">Actualiser</button>
+                </div>
+                
+                <div id="favorites-container">
+                    <div id="favorites-loading" class="loading-section">
+                        <div class="loading-spinner"></div>
+                        <p>Chargement des favoris...</p>
+                    </div>
+                    
+                    <div id="favorites-empty" class="empty-state" style="display: none;">
+                        <p>Aucun favori pour le moment</p>
+                        <button onclick="window.location.href='index.html'" class="btn-primary">
+                            Découvrir des actions
+                        </button>
+                    </div>
+                    
+                    <div id="favorites-list" class="favorites-list"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts refactorisés -->
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

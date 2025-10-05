@@ -1,0 +1,67 @@
+nohup: ignoring input
+
+> simplified-action-refactored@1.0.0 start
+> node server.js
+
+Requête exécutée: { text: 'SELECT NOW() as current_time', duration: 27, rows: 1 }
+✅ Connexion PostgreSQL OK: 2025-10-05T10:35:46.174Z
+🚀 Serveur démarré sur http://localhost:3001
+📊 API Finnhub: ✅ Configurée
+🗄️  PostgreSQL: ✅ Connecté
+🔐 Authentification: ✅ JWT activé
+Requête exécutée: { text: 'SELECT NOW() as current_time', duration: 1, rows: 1 }
+✅ Connexion PostgreSQL OK: 2025-10-05T10:35:52.170Z
+Requête exécutée: { text: 'SELECT 1 FROM users WHERE email = $1', duration: 3, rows: 0 }
+Requête exécutée: {
+  text: 'INSERT INTO users (email, password_hash, first_name, last_name)\n' +
+    '             VALUES ($1, $2, $3, $4)\n' +
+    '             RETURNING id, email, first_name, last_name, is_premium, created_at',
+  duration: 3,
+  rows: 1
+}
+Requête exécutée: { text: 'SELECT * FROM users WHERE email = $1', duration: 2, rows: 1 }
+Requête exécutée: {
+  text: 'SELECT id, email, first_name, last_name, is_premium, created_at FROM users WHERE id = $1',
+  duration: 1,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'SELECT COUNT(*) as count FROM favorites WHERE user_id = $1',
+  duration: 1,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'SELECT 1 FROM favorites WHERE user_id = $1 AND symbol = $2',
+  duration: 1,
+  rows: 0
+}
+Requête exécutée: {
+  text: 'INSERT INTO favorites (user_id, symbol, company_name)\n' +
+    '             VALUES ($1, $2, $3)\n' +
+    '             RETURNING id, user_id, symbol, company_name, added_at',
+  duration: 1,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'SELECT id, email, first_name, last_name, is_premium, created_at FROM users WHERE id = $1',
+  duration: 1,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'SELECT id, symbol, company_name, added_at\n' +
+    '             FROM favorites\n' +
+    '             WHERE user_id = $1\n' +
+    '             ORDER BY added_at DESC',
+  duration: 2,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'SELECT id, email, first_name, last_name, is_premium, created_at FROM users WHERE id = $1',
+  duration: 1,
+  rows: 1
+}
+Requête exécutée: {
+  text: 'DELETE FROM favorites WHERE user_id = $1 AND symbol = $2',
+  duration: 1,
+  rows: 1
+}

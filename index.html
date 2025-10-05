@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplifiedaction</title>
+    <link rel="stylesheet" href="Simplifiedaction_in_construction.css">
+    <link rel="stylesheet" href="favorites.css">
+    <style>
+        /* Déplacement des styles inline */
+        .nav-actions {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .user-info {
+            color: white;
+            margin-right: 15px;
+        }
+        .mr-10 {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-header">
+        <div class="site-branding">
+            <h1 class="site-title">📊 Simplified Action</h1>
+            <p class="site-subtitle">L'essentiel du marché, sans complexité</p>
+        </div>
+        
+        <div id="auth-buttons"></div>
+    </div>
+
+    <!-- 🔘 Bouton pour aller vers la page listeactions -->
+    <div class="nav-actions">
+        <button class="buttonlogin" id="btn-listeactions">
+            Voir la liste des actions S&P 500
+        </button>
+    </div>
+    
+    <div class="container">
+        <input 
+            type="text" 
+            placeholder="Rechercher un symbole (ex: AAPL)..." 
+            id="searchInput" 
+            class="input"
+        >
+        
+        <div id="results" class="results"></div>
+    </div>
+
+    <!-- Scripts refactorisés -->
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="Simplifiedaction_in_construction.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Bouton "liste actions"
+            document.getElementById('btn-listeactions')
+                .addEventListener('click', () => {
+                    window.location.href = 'listeactions.html';
+                });
+
+            // Vérifier l'authentification
+            await authManager.init();
+            const user = authManager.getCurrentUser();
+            const authButtonsDiv = document.getElementById('auth-buttons');
+            
+            if (user) {
+                authButtonsDiv.innerHTML = `
+                    <span class="user-info">
+                        Bonjour ${user.firstName || user.email}
+                    </span>
+                    <button class="buttonlogin mr-10" id="btn-account">
+                        Mon compte
+                    </button>
+                    <button class="buttonlogin" id="btn-logout">
+                        Déconnexion
+                    </button>
+                `;
+
+                // Ajout des listeners
+                document.getElementById('btn-account')
+                    .addEventListener('click', () => window.location.href = 'account.html');
+                document.getElementById('btn-logout')
+                    .addEventListener('click', logout);
+
+                console.log('Utilisateur connecté:', user.email);
+            } else {
+                authButtonsDiv.innerHTML = `
+                    <button class="buttonlogin mr-10" id="btn-signup">
+                        S'inscrire
+                    </button>
+                    <button class="buttonlogin" id="btn-login">
+                        Se connecter
+                    </button>
+                `;
+
+                // Ajout des listeners
+                document.getElementById('btn-signup')
+                    .addEventListener('click', () => window.location.href = 'signup.html');
+                document.getElementById('btn-login')
+                    .addEventListener('click', () => window.location.href = 'login.html');
+            }
+        });
+    </script>
+</body>
+</html>

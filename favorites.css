@@ -1,0 +1,143 @@
+/* Styles pour les favoris sur la page d'accueil - favorites.css */
+
+.header-nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-btn {
+    background: #6c757d !important;
+}
+
+.nav-btn:hover {
+    background: #5a6268 !important;
+}
+
+/* Bouton favori sur les cartes d'actions */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #e2e2e2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.favorite-btn:hover {
+    background: white;
+    border-color: #109c84;
+    transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #333;
+}
+
+.favorite-btn.favorited:hover {
+    background: #ffed4e;
+    border-color: #ffed4e;
+}
+
+.favorite-btn.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.favorite-btn .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e2e2e2;
+    border-top: 2px solid #109c84;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification toast */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success {
+    background: #28a745;
+}
+
+.toast.error {
+    background: #dc3545;
+}
+
+.toast.warning {
+    background: #ffc107;
+    color: #333;
+}
+
+/* Badge premium requis */
+.premium-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .nav-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .favorite-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .toast {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
